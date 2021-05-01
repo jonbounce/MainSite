@@ -1,0 +1,10 @@
+.title-container {
+    display: flex;
+    flex-direction: row;
+    margin: 3%;
+}
+
+.title-label {
+    margin-right: 2%;
+    font-weight: 500;
+}

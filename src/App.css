@@ -1,0 +1,86 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo infinite 20s linear;
+  height: 20vmin;
+  width: 20vmax;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #222;
+  height: 300px;
+  padding: 20px;
+  color: red;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.wrapper {
+  padding: 3px 10px;
+}
+
+.wrapper fieldset {
+  margin: 10px 0;
+}
+
+.d-flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.app-logo-update {
+  display: flex;
+  align-items: center;
+}
+
+.mt-5 {
+  margin-top: 2%;
+}
+
+.d-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.submit-button {
+  padding: 1%;
+  background: dodgerblue;
+  border:none;
+  color: white;
+  width: 25%;
+  float: right;
+  font-weight: bold;
+  margin: 1%;
+}

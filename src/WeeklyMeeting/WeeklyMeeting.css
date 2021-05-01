@@ -1,0 +1,16 @@
+.full-width-table {
+    width: 90%;
+    text-align: center;
+}
+
+.table-row {
+    width: 100%;
+}
+
+.w-140 {
+    width: 140%;
+}
+
+.m-1 {
+    margin: 1%;
+}
