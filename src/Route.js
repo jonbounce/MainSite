@@ -1,7 +1,10 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "./containers/Home";
-import NotFound from "./containers/NotFound";
+//import NotFound from "./containers/NotFound";
+import Login from "./containers/Login";
+import Checkin from "./containers/Checkin";
+import Register from "./containers/Register";
 
 export default function Routes() {
   return (
@@ -9,8 +12,17 @@ export default function Routes() {
       <Route exact path="/">
         <Home />
       </Route>
-<Route>
-  <NotFound />
+
+      <Route exact path="/Login">
+  <Login />
+       </Route>
+
+<Route exact path="/Checkin">
+        <Checkin />
+      </Route>
+
+<Route exact path="/Register">
+  <Register />
 </Route>
     </Switch>
   );

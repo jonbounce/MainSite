@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import "./App.css";
+
 import Nav from "react-bootstrap/Nav";
 import Routes from "./Route";
 import { LinkContainer } from "react-router-bootstrap";
@@ -20,11 +21,11 @@ function App() {
             <LinkContainer to="/Register">
             <Nav.Link href="/register">Register</Nav.Link>
              </LinkContainer>
-               <LinkContainer to="/login">
-            <Nav.Link href="/login">Login</Nav.Link>
+               <LinkContainer to="/Login">
+            <Nav.Link href="./containers/Login">Login</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/CheckIn">
-            <Nav.Link href="/CheckIn">Member Check-In</Nav.Link>
+            <LinkContainer to="/Checkin">
+            <Nav.Link href="/CheciIn">Members Check-In</Nav.Link>
             </LinkContainer>
           </Nav>
         </Navbar.Collapse>

@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Main from './Main/Main';
-import Login from "./components/Login";
+
 
 
 //Amplify.configure({
