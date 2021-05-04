@@ -8,7 +8,7 @@ export default function Home() {
       <div className="lander">
         <h1>Deeper Christian Life Ministry North-America Region</h1>
 
-        <p className="text-muted">Welcome to the Home Page</p>
+        <p style={{color:"whitesmoke"}}>Welcome to the Home Page</p>
       </div>
     </div>
 
