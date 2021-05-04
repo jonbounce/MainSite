@@ -10,23 +10,23 @@ function App() {
   return (
     <div className="App container py-3">
       <Navbar collapseOnSelect bg="light" expand="md" className="mb-3">
-      <LinkContainer to="/">
-        <Navbar.Brand className="font-weight-bold text-muted">
-         DCLM-NA
+        <LinkContainer to="/">
+          <Navbar.Brand className="font-weight-bold text-muted">
+            DCLM-NA
       </Navbar.Brand>
-      </LinkContainer>
+        </LinkContainer>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Nav activeKey={window.location.pathname}>
             <LinkContainer to="/Register">
-            <Nav.Link href="/register">Register</Nav.Link>
-             </LinkContainer>
-               <LinkContainer to="/Login">
-            <Nav.Link href="./containers/Login">Login</Nav.Link>
+              <Nav.Link href="/register">Register</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/Checkin">
+            <LinkContainer to="/Login">
+              <Nav.Link href="./containers/Login">Login</Nav.Link>
+            </LinkContainer>
+            {/* <LinkContainer to="/Checkin">
             <Nav.Link href="/CheciIn">Members Check-In</Nav.Link>
-            </LinkContainer>
+            </LinkContainer> */}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
