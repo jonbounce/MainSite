@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, FormCheck } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import "./Register.css";
@@ -20,7 +20,7 @@ export default function Register() {
   const [City, setCity] = useState("");
 
   const [pastor, setPastor] = useState("");
-  const [member, setMember] = useState("");
+  const [isMember, setMember] = useState(false);
   const [worker, setWorker] = useState("");
 
   function validateForm() {
@@ -36,7 +36,7 @@ export default function Register() {
       <Form onSubmit={handleSubmit}>
         <Form>
 
-        <Form.Row>
+          <Form.Row>
             <Form.Group as={Col} controlId="email">
               <Form.Label>First Name</Form.Label>
               <Form.Control type="text"
@@ -48,7 +48,7 @@ export default function Register() {
               <Form.Control type="text"
                 name="firstName"
                 value={LastName} placeholder="Last name" onChange={(e) => setLastName(e.target.value)} />
-               </Form.Group>
+            </Form.Group>
           </Form.Row>
 
           <Form.Row>
@@ -81,14 +81,14 @@ export default function Register() {
 
           <Form.Row>
             <Form.Group as={Col} controlId="pastor">
-              <Form.Label>Pastor</Form.Label>
-              <Form.Control type="text" value={pastor} placeholder="Pastor" onChange={(e) => setPastor(e.target.value)} />
+              <Form.Label>Your pastor's name</Form.Label>
+              <Form.Control type="text" value={pastor} placeholder="Pastor's name" onChange={(e) => setPastor(e.target.value)} />
             </Form.Group>
 
-            <Form.Group as={Col} controlId="member">
+            {/* <Form.Group as={Col} controlId="member">
               <Form.Label>Member</Form.Label>
               <Form.Control type="text" value={member} placeholder="Member" onChange={(e) => setMember(e.target.value)} />
-            </Form.Group>
+            </Form.Group> */}
 
             <Form.Group as={Col} controlId="worker">
               <Form.Label>Worker</Form.Label>
@@ -154,6 +154,14 @@ export default function Register() {
             </Form.Group>
 
           </Form.Row>
+
+          <div className="asking-member-text">
+            Are you a member?
+            <FormCheck
+              checked={isMember}
+              onClick={() => setMember(!isMember)}
+              className="ml-2 mt-1" />
+          </div>
 
           <Button block size="lg" type="submit" disabled={!validateForm()}>
             Register
