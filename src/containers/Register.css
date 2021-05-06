@@ -8,3 +8,12 @@
     max-width: 320px;
   }
 }
+
+.asking-member-text{
+  display:flex;
+  justify-content: "flex-start";
+  align-items: center;
+  margin-bottom: 2%;
+  font-weight: bold;
+  color: gray;
+}

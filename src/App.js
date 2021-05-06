@@ -7,6 +7,7 @@ import Routes from "./Route";
 import { LinkContainer } from "react-router-bootstrap";
 
 function App() {
+
   return (
     <div className="App container py-3">
       <Navbar collapseOnSelect bg="light" expand="md" className="mb-3">
@@ -19,10 +20,13 @@ function App() {
         <Navbar.Collapse className="justify-content-end">
           <Nav activeKey={window.location.pathname}>
             <LinkContainer to="/Register">
-              <Nav.Link href="/register">Register</Nav.Link>
+              <Nav.Link href="/Register">Register</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/Login">
-              <Nav.Link href="./containers/Login">Login</Nav.Link>
+              <Nav.Link href="/Login">Login</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/Visitor">
+              <Nav.Link href="/Visitor">Visitor</Nav.Link>
             </LinkContainer>
             {/* <LinkContainer to="/Checkin">
             <Nav.Link href="/CheciIn">Members Check-In</Nav.Link>

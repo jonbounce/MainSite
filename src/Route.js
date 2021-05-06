@@ -5,6 +5,7 @@ import Home from "./containers/Home";
 import Login from "./containers/Login";
 import Checkin from "./containers/Checkin";
 import Register from "./containers/Register";
+import Visitor from "./containers/Visitor";
 
 export default function Routes() {
   return (
@@ -14,16 +15,20 @@ export default function Routes() {
       </Route>
 
       <Route exact path="/Login">
-  <Login />
-       </Route>
+        <Login />
+      </Route>
 
-<Route exact path="/Checkin">
+      <Route exact path="/Checkin">
         <Checkin />
       </Route>
 
-<Route exact path="/Register">
-  <Register />
-</Route>
+      <Route exact path="/Visitor">
+        <Visitor />
+      </Route>
+
+      <Route exact path="/Register">
+        <Register />
+      </Route>
     </Switch>
   );
 }
