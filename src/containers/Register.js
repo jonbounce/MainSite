@@ -4,7 +4,7 @@ import { Container, Row, Col, FormCheck } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import "./Register.css";
-
+import StateManager from "react-select";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -29,6 +29,12 @@ export default function Register() {
 
   function handleSubmit(event) {
     event.preventDefault();
+  }
+
+  const updateAge = (value) => {
+    if ((Number(value) >= 0 && Number(value) < 200) || value === '') {
+      setAge(value)
+    }
   }
 
   return (
@@ -67,7 +73,7 @@ export default function Register() {
             <Form.Group as={Col} controlId="gender">
               <Form.Label>Gender</Form.Label>
               <Form.Control as="select" value={gender} onChange={(e) => setGender(e.target.value)}>
-                <option value="">Choose...</option>
+                <option value="" disabled>Choose...</option>
                 <option value="M">Male</option>
                 <option value="F">Female</option>
               </Form.Control>
@@ -75,7 +81,9 @@ export default function Register() {
 
             <Form.Group as={Col} controlId="age">
               <Form.Label>Age</Form.Label>
-              <Form.Control type="number" value={age} placeholder="Age" onChange={(e) => setAge(e.target.value)} />
+              <Form.Control type="number" min={0}
+                value={age} placeholder="Age" onChange={(e) => updateAge(e.target.value)}
+              />
             </Form.Group>
           </Form.Row>
 
@@ -93,7 +101,7 @@ export default function Register() {
             <Form.Group as={Col} controlId="worker">
               <Form.Label>Worker</Form.Label>
               <Form.Control as="select" value={worker} onChange={(e) => setWorker(e.target.value)}>
-                <option value="">Choose...</option>
+                <option value="" disabled>Choose...</option>
                 <option value="Usher">Usher</option>
                 <option value="Choir">Choir</option>
                 <option value="STS">STS</option>
