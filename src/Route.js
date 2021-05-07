@@ -6,6 +6,7 @@ import Login from "./containers/Login";
 import Checkin from "./containers/Checkin";
 import Register from "./containers/Register";
 import Visitor from "./containers/Visitor";
+import PastorPortal from "./containers/PastorPortal";
 
 export default function Routes() {
   return (
@@ -22,10 +23,13 @@ export default function Routes() {
         <Checkin />
       </Route>
 
-      <Route exact path="/Visitor">
+      {/* <Route exact path="/Visitor">
         <Visitor />
-      </Route>
+      </Route> */}
 
+      <Route exact path="/pastor-portal">
+        <PastorPortal />
+      </Route>
       <Route exact path="/Register">
         <Register />
       </Route>

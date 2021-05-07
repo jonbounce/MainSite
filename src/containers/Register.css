@@ -2,18 +2,68 @@
   .Register {
     padding: 60px 0;
   }
-
   .Register form {
     margin: 0 auto;
     max-width: 320px;
   }
 }
 
-.asking-member-text{
-  display:flex;
+.asking-member-text {
+  display: flex;
   justify-content: "flex-start";
   align-items: center;
   margin-bottom: 2%;
   font-weight: bold;
   color: gray;
+}
+
+.middle-conatiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.register-user-header {
+  font-size: large;
+  font-weight: bold;
+  margin-top: 5%;
+}
+
+.register-user-body {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin-top: 3%;
+  justify-content: space-between;
+}
+
+.register-header {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+
+.register-user-button {
+  color: white;
+  background-color: violet;
+  border: 1px solid violet;
+  width: 20%;
+  border-radius: 20px;
+  height: 40px;
+}
+
+.register-user-button:hover {
+  box-shadow: 2px 2px 4px 0 rgb(228, 173, 228);
+  font-weight: bold;
+}
+
+.outline-button {
+  color: dodgerblue;
+  border-radius: 5px;
+  border: 1px solid dodgerblue;
+  align-self: center;
+  background-color: white;
 }

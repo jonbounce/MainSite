@@ -25,12 +25,6 @@ function App() {
             <LinkContainer to="/Login">
               <Nav.Link href="/Login">Login</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/Visitor">
-              <Nav.Link href="/Visitor">Visitor</Nav.Link>
-            </LinkContainer>
-            {/* <LinkContainer to="/Checkin">
-            <Nav.Link href="/CheciIn">Members Check-In</Nav.Link>
-            </LinkContainer> */}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

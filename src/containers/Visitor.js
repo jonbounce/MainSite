@@ -101,7 +101,11 @@ export default function Visitor() {
 
                     <Form.Group controlId="Address">
                         <Form.Label>Enter prayer request</Form.Label>
-                        <Form.Control value={prayerRequest} placeholder="Prayer request" onChange={(e) => setPrayerRequest(e.target.value)} />
+                        <Form.Control
+                            as="textarea"
+                            value={prayerRequest}
+                            row={2}
+                            placeholder="Prayer request" onChange={(e) => setPrayerRequest(e.target.value)} />
                     </Form.Group>
 
                     <Button block size="lg" type="submit" disabled={!validateForm()}>
