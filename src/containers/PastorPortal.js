@@ -6,6 +6,9 @@ import Button from "react-bootstrap/Button";
 import StateManager from "react-select";
 import './PastorPortal.css';
 import SubmitMonthlyAttendance from './SubmitMonthlyAttendence';
+import ChallengesEncounter from "./ChallengesEncounter";
+import SpecialEvents from "./SpecialEvents";
+import TestimonyInformation from "./TestimonyInformation";
 
 export default function PastorPortal() {
 
@@ -14,23 +17,6 @@ export default function PastorPortal() {
         "Submit Special Events/Programs", "Submit Testimonal Information",
         "Special Request to RO"
     ]
-
-    const [month, setMonth] = useState("");
-    const [weekno, setWeekno] = useState("");
-    const [bibleStudy, setBibleStudy] = useState("");
-    const [ChurchAddress, setChurchAddress] = useState("");
-    const [pastor, setPastor] = useState("");
-
-    const [sundayWorshipService, setSundayWorshipService] = useState("");
-    const [revivalService, setRevivalService] = useState("");
-
-    const [member, setMember] = useState("");
-    const [visitor, setVisitor] = useState("");
-
-    const [bibleStudyTotal, setBibleStudyTotal] = useState("");
-    const [sundayWorshipServiceTotal, setSundayWorshipServiceTotal] = useState("");
-    const [revivalServiceTotal, setRevivalServiceTotal] = useState("");
-    const [remarks, setRemarks] = useState("")
 
     const [activeKey, setActiveKey] = useState(drawerChildren[0]);
 
@@ -41,7 +27,21 @@ export default function PastorPortal() {
     function handleSubmit(event) {
         event.preventDefault();
     }
+    const selectedPage = () => {
 
+        switch (activeKey) {
+            case drawerChildren[0]: //Submit Monthly Attendance
+                return <SubmitMonthlyAttendance />
+            case drawerChildren[1]: //Submit Challenges Encountered
+                return <ChallengesEncounter />
+            case drawerChildren[2]: //Submit Special Events/Programs
+                return <SpecialEvents />
+            case drawerChildren[3]: //Submit Testimonal Information
+                return <TestimonyInformation />
+            default:
+                return <></>
+        }
+    }
 
     return (
         <div className="Login">
@@ -60,7 +60,8 @@ export default function PastorPortal() {
                     )}
                 </Nav>
                 <div className="col-9">
-                    <SubmitMonthlyAttendance />
+                    <div className="mb-3 pastor-header">{activeKey}</div>
+                    {selectedPage()}
                 </div>
             </div>
         </div>
