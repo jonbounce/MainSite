@@ -4,7 +4,7 @@ import { Container, Row, Col, FormCheck, Nav } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import StateManager from "react-select";
-import { monthList } from '../Common';
+import { monthList, setPositiveNumber } from '../Common';
 
 export default function SubmitMonthlyAttendance() {
 
@@ -34,7 +34,6 @@ export default function SubmitMonthlyAttendance() {
     function handleSubmit(event) {
         event.preventDefault();
     }
-
 
     return (
         <div className="Login">
@@ -93,7 +92,108 @@ export default function SubmitMonthlyAttendance() {
                         </Form.Group>
 
                     </Form.Row>
-{/* 
+                    <div className="table-header">
+                        <b style={{ marginRight: '1%' }}>No of members:</b>
+                        {/* {(householdNo === '' ? 0 : householdNo)} */}
+                    </div>
+                    <table width="100%" className="border-table">
+                        <thead>
+                            <th>Men</th>
+                            <th>Women</th>
+                            <th>Youths</th>
+                            <th>Kids</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input
+                                        min={0}
+                                        placeholder="Total Men"
+                                        className="td-input"
+                                    />
+                                </td>
+                                <td>
+                                    <input
+                                        placeholder="Total Women"
+                                        className="td-input"
+                                    />
+                                </td>
+                                <td className="sub-table-container">
+                                    <table width="100%" className="sub-table">
+                                        <thead>
+                                            <th style={{ borderRight: '1px solid lightgrey' }}>Bro</th>
+                                            <th>Sis</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style={{ borderRight: '1px solid lightgrey' }}>
+                                                    <input
+                                                        placeholder="Bro"
+                                                        className="td-input"
+                                                    />
+                                                </td>
+                                                <td>
+                                                    <input
+                                                        placeholder="Sis"
+                                                        className="td-input"
+                                                    />
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td className="sub-table-container">
+                                    <table width="100%" className="sub-table">
+                                        <thead>
+                                            <th style={{ borderRight: '1px solid lightgrey' }}>Boy(s)</th>
+                                            <th>Girl(s)</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style={{ borderRight: '1px solid lightgrey' }}>
+                                                    <input
+                                                        placeholder="Boy"
+                                                        className="td-input"
+                                                    />
+                                                </td>
+                                                <td>
+                                                    <input
+                                                        placeholder="Girl"
+                                                        className="td-input"
+                                                    />
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <Form.Row>
+                        <Form.Group as={Col} controlId="sundayworshiptotal">
+                            <Form.Label>Sunday Worship Service Total</Form.Label>
+                            <Form.Control
+                                type="number"
+                                value={sundayWorshipServiceTotal} placeholder="Sunday Worship Service Total" onChange={(e) => setPositiveNumber(e.target.value, setSundayWorshipServiceTotal)} />
+                        </Form.Group>
+
+                        <Form.Group as={Col} controlId="biblestudytotal">
+                            <Form.Label>Bible Study Total</Form.Label>
+                            <Form.Control
+                                type="number"
+                                value={bibleStudyTotal} placeholder="Bible Study Total" onChange={(e) => setPositiveNumber(e.target.value, setBibleStudyTotal)} />
+                        </Form.Group>
+
+                        <Form.Group as={Col} controlId="revivaltotal">
+                            <Form.Label>Revival Service Total</Form.Label>
+                            <Form.Control
+                                type="number"
+                                value={revivalServiceTotal} placeholder="Revival Service Total" onChange={(e) => setPositiveNumber(e.target.value, setRevivalServiceTotal)} />
+                        </Form.Group>
+                    </Form.Row>
+
+                    {/* 
                     <Form.Row>
                         <Form.Group as={Col} controlId="sundayservice">
                             <Form.Label>Sunday Worship Service</Form.Label>
@@ -117,23 +217,6 @@ export default function SubmitMonthlyAttendance() {
                             <Form.Control type="text" value={visitor} placeholder="Visitor" onChange={(e) => setVisitor(e.target.value)} />
                         </Form.Group>
                     </Form.Row>
-
-                    {/* <Form.Row>
-                        <Form.Group as={Col} controlId="sundayworshiptotal">
-                            <Form.Label>Sunday Worship Service Total</Form.Label>
-                            <Form.Control value={sundayWorshipServiceTotal} placeholder="Sunday Worship Service Total" onChange={(e) => setSundayWorshipServiceTotal(e.target.value)} />
-                        </Form.Group>
-
-                        <Form.Group as={Col} controlId="biblestudytotal">
-                            <Form.Label>Bible Study Total</Form.Label>
-                            <Form.Control value={bibleStudyTotal} placeholder="Bible Study Total" onChange={(e) => setBibleStudyTotal(e.target.value)} />
-                        </Form.Group>
-
-                        <Form.Group as={Col} controlId="revivaltotal">
-                            <Form.Label>Revival Service Total</Form.Label>
-                            <Form.Control value={revivalServiceTotal} placeholder="Revival Service Total" onChange={(e) => setRevivalServiceTotal(e.target.value)} />
-                        </Form.Group>
-                    </Form.Row> */}
 
                     <Form.Group controlId="Address">
                         <Form.Label>Remarks</Form.Label>

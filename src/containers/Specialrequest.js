@@ -3,9 +3,8 @@ import Form from "react-bootstrap/Form";
 import { useHistory } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 
-export default function TestimonyInformation() {
-    const [testifier, setTestifier] = useState("");
-    const [testimony, setTestimony] = useState("");
+export default function SpecialRequest() {
+    const [request, setRequest] = useState("");
 
     function validateForm() {
         return true
@@ -21,23 +20,13 @@ export default function TestimonyInformation() {
             <Form onSubmit={handleSubmit}
             >
                 <Form.Group controlId="Address">
-                    <Form.Label>Name of testifier</Form.Label>
-                    <Form.Control
-                        type="text"
-                        value={testifier}
-                        row={2}
-                        placeholder="Testifier"
-                        onChange={(e) => setTestifier(e.target.value)}
-                    />
-                </Form.Group>
-                <Form.Group controlId="Address">
-                    <Form.Label>Testimony</Form.Label>
+                    <Form.Label>Special Request</Form.Label>
                     <Form.Control
                         as="textarea"
-                        value={testimony}
+                        value={request}
                         row={2}
-                        placeholder="Enter testimony here ..."
-                        onChange={(e) => setTestimony(e.target.value)}
+                        placeholder="Enter your request here ..."
+                        onChange={(e) => setRequest(e.target.value)}
                     />
                 </Form.Group>
                 <Button className="mt-5" block size="lg" type="submit" disabled={!validateForm()}>

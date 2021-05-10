@@ -16,8 +16,17 @@
     border-right: 2px solid dodgerblue;
 }
 
-.pastor-header{
+.pastor-header {
     font-weight: bold;
     font-size: x-large;
     color: lightsalmon;
+}
+
+.td-input {
+    width: 50%;
+    border: 0;
+}
+
+.td-input:focus{
+    outline: none;
 }

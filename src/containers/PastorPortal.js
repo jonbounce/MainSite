@@ -9,6 +9,7 @@ import SubmitMonthlyAttendance from './SubmitMonthlyAttendence';
 import ChallengesEncounter from "./ChallengesEncounter";
 import SpecialEvents from "./SpecialEvents";
 import TestimonyInformation from "./TestimonyInformation";
+import SpecialRequest from "./Specialrequest";
 
 export default function PastorPortal() {
 
@@ -38,6 +39,8 @@ export default function PastorPortal() {
                 return <SpecialEvents />
             case drawerChildren[3]: //Submit Testimonal Information
                 return <TestimonyInformation />
+            case drawerChildren[4]: //Special Request to RO
+                return <SpecialRequest />
             default:
                 return <></>
         }
