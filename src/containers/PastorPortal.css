@@ -1,0 +1,17 @@
+.side-drawer {
+    padding: 0;
+    border-right: 1px solid lavender;
+    min-height: 85vh;
+    max-height: fill-available;
+}
+
+.side-drawer-child {
+    /* border-bottom: 1px solid lightgrey; */
+    color: gray;
+}
+
+.active-child {
+    color: dodgerblue;
+    background: linear-gradient(to right, white, #c2f3f9);
+    border-right: 2px solid dodgerblue;
+}

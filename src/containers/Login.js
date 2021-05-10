@@ -17,9 +17,14 @@ export default function Login() {
   }
 
   return (
-    <div className="Login">
-      <Form onSubmit={handleSubmit}>
-        <Form.Group size="lg" controlId="email">
+    <div className="Login"
+      style={{ display: "flex", alignContent: "center", flexDirection: "column" }}
+    >
+      <Form onSubmit={handleSubmit}
+      >
+        <Form.Group
+          className="mt-5 half-form"
+          size="md" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
             autoFocus
@@ -28,7 +33,7 @@ export default function Login() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Group>
-        <Form.Group size="lg" controlId="password">
+        <Form.Group className="half-form" size="lg" controlId="password">
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
@@ -36,7 +41,7 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button block size="lg" type="submit" disabled={!validateForm()}>
+        <Button className="half-form mt-5" block size="lg" type="submit" disabled={!validateForm()}>
           Login
         </Button>
       </Form>

@@ -1,10 +1,50 @@
-@m@media all and (min-width: 480px) {
-  .Checkin   {
+@media all and (min-width: 480px) {
+  .Checkin {
     padding: 60px 0;
   }
-
   .Checkin form {
     margin: 0 auto;
     max-width: 320px;
   }
+}
+
+.center-text {
+  text-align: initial !important;
+  margin-top: 1%;
+}
+
+.border-table {
+  border: 1px solid lightgrey;
+  table-layout: fixed;
+  margin-bottom: 2%;
+}
+
+.border-table th {
+  border-right: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+}
+
+.border-table td {
+  border-right: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+}
+
+.sub-table-container {
+  padding: 0;
+}
+
+.sub-table {
+  border: 0;
+}
+
+.sub-table th{
+  border-right: 0;
+}
+
+.sub-table td{
+  border: 0;
+}
+
+.table-header{
+  display: flex;
 }
