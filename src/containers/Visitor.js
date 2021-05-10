@@ -109,7 +109,7 @@ export default function Visitor() {
                     </Form.Group>
 
                     <Button block size="lg" type="submit" disabled={!validateForm()}>
-                        Submit
+                        Register
                     </Button>
 
                 </Form>
