@@ -30,3 +30,34 @@
   position: absolute;
   z-index: -1;
 }
+
+.footer {
+  background-color: dodgerblue;
+  color: white;
+  min-width: fill-available;
+  padding: 2%;
+  position: absolute;
+  left: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.footer-header {
+  display: flex;
+  justify-content: flex-start;
+  font-weight: bold;
+  font-size: x-large;
+  margin-bottom: 2%;
+  border-bottom: 2px solid crimson;
+}
+
+.footer-body {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.footer-child-header{
+  font-weight: bold;
+  font-size: large;
+}

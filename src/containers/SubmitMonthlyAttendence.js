@@ -206,7 +206,7 @@ export default function SubmitMonthlyAttendance() {
                         </Form.Group>
                     </Form.Row> */}
 
-                    <Form.Row>
+                    {/* <Form.Row>
                         <Form.Group as={Col} controlId="member">
                             <Form.Label>Member</Form.Label>
                             <Form.Control type="text" value={member} placeholder="Member" onChange={(e) => setMember(e.target.value)} />
@@ -216,7 +216,7 @@ export default function SubmitMonthlyAttendance() {
                             <Form.Label>Visitor</Form.Label>
                             <Form.Control type="text" value={visitor} placeholder="Visitor" onChange={(e) => setVisitor(e.target.value)} />
                         </Form.Group>
-                    </Form.Row>
+                    </Form.Row> */}
 
                     <Form.Group controlId="Address">
                         <Form.Label>Remarks</Form.Label>

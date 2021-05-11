@@ -84,3 +84,8 @@
   font-weight: bold;
   margin: 1%;
 }
+
+.header-bar{
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 4px 2px 8px 0 lightgrey ;
+}
