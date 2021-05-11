@@ -25,7 +25,12 @@ export default function SubmitMonthlyAttendance() {
     const [revivalServiceTotal, setRevivalServiceTotal] = useState("");
     const [remarks, setRemarks] = useState("");
     const [serviceType, setServiceTypes] = useState("");
-
+    const [totalMen, setTotalMen] = useState("");
+    const [totalWomen, setTotalWoMen] = useState("");
+    const [totalYouthsMale, setTotalYouthsMale] = useState("");
+    const [totalYouthsFemale, setTotalYouthsFemale] = useState("");
+    const [totalKidsMale, setTotalKidsMale] = useState("");
+    const [totalKidsFemale, setTotalKidsFemale] = useState("");
 
     function validateForm() {
         return true
@@ -33,6 +38,11 @@ export default function SubmitMonthlyAttendance() {
 
     function handleSubmit(event) {
         event.preventDefault();
+    }
+
+    const getTotal = () => {
+        return Number(totalMen) + Number(totalWomen) + Number(totalYouthsMale) +
+            Number(totalYouthsFemale) + Number(totalKidsMale) + Number(totalKidsFemale)
     }
 
     return (
@@ -92,85 +102,105 @@ export default function SubmitMonthlyAttendance() {
                         </Form.Group>
 
                     </Form.Row>
-                    <div className="table-header">
-                        <b style={{ marginRight: '1%' }}>No of members:</b>
-                        {/* {(householdNo === '' ? 0 : householdNo)} */}
-                    </div>
-                    <table width="100%" className="border-table">
-                        <thead>
-                            <th>Men</th>
-                            <th>Women</th>
-                            <th>Youths</th>
-                            <th>Kids</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <input
-                                        min={0}
-                                        placeholder="Total Men"
-                                        className="td-input"
-                                    />
-                                </td>
-                                <td>
-                                    <input
-                                        placeholder="Total Women"
-                                        className="td-input"
-                                    />
-                                </td>
-                                <td className="sub-table-container">
-                                    <table width="100%" className="sub-table">
-                                        <thead>
-                                            <th style={{ borderRight: '1px solid lightgrey' }}>Bro</th>
-                                            <th>Sis</th>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td style={{ borderRight: '1px solid lightgrey' }}>
-                                                    <input
-                                                        placeholder="Bro"
-                                                        className="td-input"
-                                                    />
-                                                </td>
-                                                <td>
-                                                    <input
-                                                        placeholder="Sis"
-                                                        className="td-input"
-                                                    />
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                                <td className="sub-table-container">
-                                    <table width="100%" className="sub-table">
-                                        <thead>
-                                            <th style={{ borderRight: '1px solid lightgrey' }}>Boy(s)</th>
-                                            <th>Girl(s)</th>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td style={{ borderRight: '1px solid lightgrey' }}>
-                                                    <input
-                                                        placeholder="Boy"
-                                                        className="td-input"
-                                                    />
-                                                </td>
-                                                <td>
-                                                    <input
-                                                        placeholder="Girl"
-                                                        className="td-input"
-                                                    />
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    {serviceType !== '' &&
+                        <>
+                            <div className="table-header">
+                                <b style={{ marginRight: '1%' }}>Total members of {serviceType}:</b>
+                                {getTotal()}
+                            </div>
+                            <table width="100%" className="border-table">
+                                <thead>
+                                    <th>Men</th>
+                                    <th>Women</th>
+                                    <th>Youths</th>
+                                    <th>Kids</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input
+                                                placeholder="Total Men"
+                                                className="td-input"
+                                                type="number"
+                                                value={totalMen}
+                                                onChange={(e) => setPositiveNumber(e.target.value, setTotalMen)}
+                                            />
+                                        </td>
+                                        <td>
+                                            <input
+                                                placeholder="Total Women"
+                                                className="td-input"
+                                                type="number"
+                                                value={totalWomen}
+                                                onChange={(e) => setPositiveNumber(e.target.value, setTotalWoMen)}
+                                            />
+                                        </td>
+                                        <td className="sub-table-container">
+                                            <table width="100%" className="sub-table">
+                                                <thead>
+                                                    <th style={{ borderRight: '1px solid lightgrey' }}>Bro</th>
+                                                    <th>Sis</th>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style={{ borderRight: '1px solid lightgrey' }}>
+                                                            <input
+                                                                placeholder="Bro"
+                                                                className="td-input"
+                                                                type="number"
+                                                                value={totalYouthsMale}
+                                                                onChange={(e) => setPositiveNumber(e.target.value, setTotalYouthsMale)}
+                                                            />
+                                                        </td>
+                                                        <td>
+                                                            <input
+                                                                placeholder="Sis"
+                                                                className="td-input"
+                                                                type="number"
+                                                                value={totalYouthsFemale}
+                                                                onChange={(e) => setPositiveNumber(e.target.value, setTotalYouthsFemale)}
+                                                            />
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                        <td className="sub-table-container">
+                                            <table width="100%" className="sub-table">
+                                                <thead>
+                                                    <th style={{ borderRight: '1px solid lightgrey' }}>Boy(s)</th>
+                                                    <th>Girl(s)</th>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style={{ borderRight: '1px solid lightgrey' }}>
+                                                            <input
+                                                                placeholder="Boy"
+                                                                className="td-input"
+                                                                type="number"
+                                                                value={totalKidsMale}
+                                                                onChange={(e) => setPositiveNumber(e.target.value, setTotalKidsMale)}
+                                                            />
+                                                        </td>
+                                                        <td>
+                                                            <input
+                                                                placeholder="Girl"
+                                                                className="td-input"
+                                                                type="number"
+                                                                value={totalKidsFemale}
+                                                                onChange={(e) => setPositiveNumber(e.target.value, setTotalKidsFemale)}
+                                                            />
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </>}
 
-                    <Form.Row>
+                    {/* <Form.Row>
                         <Form.Group as={Col} controlId="sundayworshiptotal">
                             <Form.Label>Sunday Worship Service Total</Form.Label>
                             <Form.Control
@@ -191,7 +221,7 @@ export default function SubmitMonthlyAttendance() {
                                 type="number"
                                 value={revivalServiceTotal} placeholder="Revival Service Total" onChange={(e) => setPositiveNumber(e.target.value, setRevivalServiceTotal)} />
                         </Form.Group>
-                    </Form.Row>
+                    </Form.Row> */}
 
                     {/* 
                     <Form.Row>
