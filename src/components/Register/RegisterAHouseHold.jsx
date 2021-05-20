@@ -11,39 +11,58 @@ const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 const [Confirmpassword, setConfirmpassword] = useState("");
 const [ChurchAddress, setChurchAddress] = useState("");
-
+const [City, setCity] = useState("")
+const [pastor, setPastor] = useState("");
 const [FirstName, setFirstName] = useState("");
 const [LastName, setLastName] = useState("");
 const [gender, setGender] = useState("");
-const [age, setAge] = useState("");
+
 const [PhoneNumber, setPhoneNumber] = useState("");
-const [City, setCity] = useState("");
-
-const [pastor, setPastor] = useState("");
+const [country, setCountry] = useState("");
+const [state, setState] = useState("");
+const [zip, setZip] = useState("");
 const [isMember, setMember] = useState(false);
-const [worker, setWorker] = useState("");
-
+const [activity, setActivity] = useState("");
+const [category, setCategory] = useState("");
+const [group, setGroup] = useState("");
+const [username, setUsername] = useState("");const [date, setDate] = useState("");
 function validateForm() {
     return email.length > 0 && password.length > 0;
   }
 
   function handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault();   const UserData={
+      "email":email,
+      "password":password,
+      "Confirmpassword":Confirmpassword,
+      "ChurchAddress":ChurchAddress,
+      "FirstName":FirstName,
+      "LastName":LastName,
+      "date":date,
+      "country":country,
+      "PhoneNumber":PhoneNumber,
+      "City":City,
+      "pastor":pastor,
+    
+      "state":state,
+      "zip":zip,
+      "username":username
+  }
+  console.log(UserData)
+  History.push("/login")
   }
 
   const updateAge = (value) => {
-    if ((Number(value) >= 0 && Number(value) < 200) || value === "") {
-      setAge(value);
-    }
+  
   };
 
   
     return (
         <div className="Login">
-              <Form onSubmit={handleSubmit}>
+              <Form>
                 <Form>
                   <Form.Row>
-                    <Form.Group as={Col} controlId="email">
+                    <Form.Group as={Col} controlId="first-name">
                       <Form.Label>First Name</Form.Label>
                       <Form.Control
                         type="text"
@@ -53,19 +72,18 @@ function validateForm() {
                         onChange={(e) => setFirstName(e.target.value)}
                       />
                     </Form.Group>
-                    <Form.Group as={Col} controlId="phonenumber">
+                    <Form.Group as={Col} controlId="last-name">
                       <Form.Label>Last Name</Form.Label>
                       <Form.Control
                         type="text"
-                        name="firstName"
+                        name="Last name"
                         value={LastName}
                         placeholder="Last name"
                         onChange={(e) => setLastName(e.target.value)}
                       />
                     </Form.Group>
-                  </Form.Row>
 
-                  <Form.Row>
+                  
                     <Form.Group as={Col} controlId="email">
                       <Form.Label>Email</Form.Label>
                       <Form.Control
@@ -75,6 +93,24 @@ function validateForm() {
                         onChange={(e) => setEmail(e.target.value)}
                       />
                     </Form.Group>
+                  </Form.Row>
+
+                  <Form.Row>
+                  <Form.Group as={Col} controlId="activity">
+                      <Form.Label>Church Activity</Form.Label>
+                      <Form.Control
+                        as="select"
+                        value={activity}
+                        onChange={(e) => setActivity(e.target.value)}>
+                        <option value="" disabled>
+                          Choose...
+                        </option>
+                        <option value="Poster">Poster</option>
+                        <option value="Worker">Worker</option>
+                        <option value="Member">Member</option>
+                      </Form.Control>
+                    </Form.Group>
+                   
 
                     <Form.Group as={Col} controlId="phonenumber">
                       <Form.Label>Phone Number</Form.Label>
@@ -85,11 +121,38 @@ function validateForm() {
                         onChange={(e) => setPhoneNumber(e.target.value)}
                       />
                     </Form.Group>
+
+                    <Form.Group as={Col} controlId="category">
+                      <Form.Label>Category</Form.Label>
+                      <Form.Control
+                        as="select"
+                        value={category}
+                        onChange={(e) => setCategory(e.target.value)}>
+                        <option value="" disabled>
+                          Choose...
+                        </option>
+                        <option value="Father">Father</option>
+                        <option value="Mother">Mother</option>
+                        <option value="Member1">Member1</option>
+                        <option value="Member2">Member2</option>
+                        <option value="Member3">Member3</option>
+                      </Form.Control>
+                    </Form.Group>
+                    <Form.Group as={Col} controlId="date-of-birth">
+                      <Form.Label>Date of Birth</Form.Label>
+                      <Form.Control
+                        type="date"
+                       
+                        value={date}
+                        onChange={(e) => setDate(e.target.value)}
+                      />
+                    </Form.Group>
+
                   </Form.Row>
 
                   <Form.Row>
-                    <Form.Group as={Col} controlId="gender">
-                      <Form.Label>Gender</Form.Label>
+                    <Form.Group as={Col} controlId="Sex">
+                      <Form.Label>Sex</Form.Label>
                       <Form.Control
                         as="select"
                         value={gender}
@@ -102,21 +165,22 @@ function validateForm() {
                       </Form.Control>
                     </Form.Group>
 
-                    <Form.Group as={Col} controlId="age">
-                      <Form.Label>Age</Form.Label>
-                      <Form.Control
-                        type="number"
-                        min={0}
-                        value={age}
-                        placeholder="Age"
-                        onChange={(e) => updateAge(e.target.value)}
-                      />
-                    </Form.Group>
-                  </Form.Row>
-
-                  {userType !== "PASTOR" && (
-                    <Form.Row>
-                      <Form.Group as={Col} controlId="pastor">
+                    <Form.Group as={Col} controlId="Group-Section">
+                          <Form.Label>Group Section</Form.Label>
+                          <Form.Control
+                            as="select"
+                            value={group}
+                            onChange={(e) => setGroup(e.target.value)}>
+                            <option value="" disabled>
+                              Choose...
+                            </option>
+                            <option value="Young Adult">Young Adult</option>
+                            <option value="Youth">Youth</option>
+                            <option value="Children">Children</option>
+                           
+                          </Form.Control>
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="pastor">
                         <Form.Label>Your pastor's name</Form.Label>
                         <Form.Control
                           type="text"
@@ -124,33 +188,8 @@ function validateForm() {
                           placeholder="Pastor's name"
                           onChange={(e) => setPastor(e.target.value)}
                         />
-                      </Form.Group>
-
-                      {/* <Form.Group as={Col} controlId="member">
-              <Form.Label>Member</Form.Label>
-              <Form.Control type="text" value={member} placeholder="Member" onChange={(e) => setMember(e.target.value)} />
-            </Form.Group> */}
-
-                      {userType !== "MEMBER" && (
-                        <Form.Group as={Col} controlId="worker">
-                          <Form.Label>Worker</Form.Label>
-                          <Form.Control
-                            as="select"
-                            value={worker}
-                            onChange={(e) => setWorker(e.target.value)}>
-                            <option value="" disabled>
-                              Choose...
-                            </option>
-                            <option value="Usher">Usher</option>
-                            <option value="Choir">Choir</option>
-                            <option value="STS">STS</option>
-                            <option value="Youth">Youth</option>
-                            <option value="Young Adult">Young Adult</option>
-                          </Form.Control>
-                        </Form.Group>
-                      )}
-                    </Form.Row>
-                  )}
+                    </Form.Group>
+                  </Form.Row>
 
                   <Form.Group controlId="Address">
                     <Form.Label>Enter your Church Address</Form.Label>
@@ -160,7 +199,19 @@ function validateForm() {
                       onChange={(e) => setChurchAddress(e.target.value)}
                     />
                   </Form.Group>
-                  <Form.Row>
+                  <Form.Row><Form.Group as={Col} controlId="gender">
+  <Form.Label>Country</Form.Label>
+  <Form.Control
+    as="select"
+    value={country}
+    onChange={(e) => setCountry(e.target.value)}>
+    <option value="" disabled>
+      Choose...
+    </option>
+    <option value="America">America</option>
+    <option value="Example">Example</option>
+  </Form.Control>
+</Form.Group>
                     <Form.Group as={Col} controlId="City">
                       <Form.Label>City</Form.Label>
                       <Form.Control
@@ -169,24 +220,35 @@ function validateForm() {
                       />
                     </Form.Group>
 
+                  
                     <Form.Group as={Col} controlId="State">
                       <Form.Label>State</Form.Label>
-                      <Form.Control as="select" defaultValue="Choose...">
-                        <option>Choose...</option>
-                        <option>Texas</option>
-                        <option>Oklahoma</option>
-                        <option>Arizona</option>
-                        <option>New Mexico</option>
+                      <Form.Control value={state} onChange={e=>setState(e.target.value)}as="select" defaultValue="Choose...">
+                        <option disabled>Choose...</option>
+                        <option value="texas">Texas</option>
+                        <option value="oklahoma">Oklahoma</option>
+                        <option value="arizona">Arizona</option>
+                        <option value="new mexico">New Mexico</option>
                       </Form.Control>
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="Zip">
                       <Form.Label>Zip</Form.Label>
-                      <Form.Control />
+                      <Form.Control type="text" value={zip} onChange={e=>setZip(e.target.value)} />
                     </Form.Group>
+
                   </Form.Row>
 
                   <Form.Row>
+                  <Form.Group as={Col} controlId="username">
+                      <Form.Label>Username</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={username}
+                        placeholder="Enter Username"
+                        onChange={(e) => setUsername(e.target.value)}
+                      />
+                    </Form.Group>
                     <Form.Group as={Col} controlId="password">
                       <Form.Label>Password</Form.Label>
                       <Form.Control
@@ -218,6 +280,7 @@ function validateForm() {
                     block
                     size="lg"
                     type="submit"
+                    onClick={handleSubmit}
                     disabled={!validateForm()}>
                     Register
                   </Button>
