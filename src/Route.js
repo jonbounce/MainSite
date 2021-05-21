@@ -6,7 +6,11 @@ import Login from "./containers/Login";
 import Checkin from "./containers/Checkin";
 import Register from "./containers/Register";
 import Visitor from "./containers/Visitor";
-import PastorPortal from "./containers/PastorPortal";
+import PasterPortal from "./containers/PasterPortal.jsx";
+import HouseHolderCheckIn from "./containers/HouseHolderCheckIn";
+import SubmitChallengesEncountered from "./components/PastorPage/SubmitChallengesEncountered";
+import SpecialEvents from "./components/PastorPage/SpecialEvents";
+import RoPastorPortal from "./components/PastorPage/RoPastorPortal";
 
 export default function Routes() {
   return (
@@ -22,19 +26,30 @@ export default function Routes() {
       <Route exact path="/Checkin">
         <Checkin />
       </Route>
+      <Route exact path="/HouseHolderCheckIn">
+        <HouseHolderCheckIn />
+      </Route>
 
       {/* <Route exact path="/Visitor">
         <Visitor />
       </Route> */}
 
       <Route exact path="/pastor-portal">
-        <PastorPortal />
+        <PasterPortal />
       </Route>
+      <Route exact path="/pastor-portal/challenges-encountered">
+        <SubmitChallengesEncountered />
+      </Route>
+      <Route exact path="/pastor-portal/special-events">
+        <SpecialEvents />
+      </Route>
+      <Route exact path="/pastor-portal/Request-to-RO">
+        <RoPastorPortal />
+      </Route>
+
       <Route exact path="/Register">
         <Register />
       </Route>
     </Switch>
   );
 }
-
-

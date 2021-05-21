@@ -55,7 +55,7 @@ function validateForm() {
 
     return (
         <div className="Login">
-              <Form>
+              
                 <Form>
                   <Form.Row>
                     <Form.Group as={Col} controlId="first-name">
@@ -223,7 +223,7 @@ function validateForm() {
                     Register
                   </Button>
                 </Form>
-              </Form>
+           
             </div>
     )
 }

@@ -1,0 +1,67 @@
+.HouseHolderCheckIn form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.HouseHolderCheckIn form > * + * {
+  margin-top: 1.5rem;
+}
+.HouseHolderCheckIn form .input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.HouseHolderCheckIn form .input-wrapper > label {
+  min-width: 130px;
+  text-align: left;
+  padding-left: 1rem;
+  margin-bottom: 0px;
+  cursor: pointer;
+}
+
+.HouseHolderCheckIn form .input-wrapper input:first-child {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+}
+.HouseHolderCheckIn form .input-wrapper input,
+.HouseHolderCheckIn form .input-wrapper select {
+  border: 1px solid #ddd;
+  outline: none;
+  height: 40px;
+
+  padding: 0rem 0.5rem;
+}
+.HouseHolderCheckIn form .input-wrapper select {
+  width: 300px;
+}
+.HouseHolderCheckIn form .input-wrapper input:last-child {
+  width: 300px;
+}
+.HouseHolderCheckIn form .input-wrapper.no-checkbox > label {
+  padding: 0rem;
+}
+.HouseHolderCheckIn form a {
+  height: 45px;
+  background-color: #298ffc;
+  display: inline-block;
+  width: 430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 5px;
+  color: #fff;
+}
+.HouseHolderCheckIn form a:hover {
+  background-color: #007bff;
+}
+.HouseHolderCheckIn form input[type="submit"] {
+  width: 430px;
+  height: 45px;
+  background-color: #1adf73;
+  outline: none;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+}
