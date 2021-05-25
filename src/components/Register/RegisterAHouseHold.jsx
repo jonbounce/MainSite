@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import StateManager from "react-select";
 function RegisterAHouseHold() { 
+  const Hisory=useHistory()
     const [userType, setUserType] = useState("");
 
 const [email, setEmail] = useState("");

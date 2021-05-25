@@ -11,6 +11,8 @@ import HouseHolderCheckIn from "./containers/HouseHolderCheckIn";
 import SubmitChallengesEncountered from "./components/PastorPage/SubmitChallengesEncountered";
 import SpecialEvents from "./components/PastorPage/SpecialEvents";
 import RoPastorPortal from "./components/PastorPage/RoPastorPortal";
+import UpdateInformation from "./containers/UpdateInformation";
+import RegionOverseerPage from "./containers/RegionOverseerPage";
 
 export default function Routes() {
   return (
@@ -30,13 +32,21 @@ export default function Routes() {
         <HouseHolderCheckIn />
       </Route>
 
-      {/* <Route exact path="/Visitor">
-        <Visitor />
-      </Route> */}
+      <Route exact path="/HouseHolderCheckIn/UpdateInformation">
+        <UpdateInformation />
+      </Route>
 
+      <Route exact path="/Visitor">
+        <Visitor />
+      </Route>
+
+      <Route exact path="/RegionOverseerPage">
+        <RegionOverseerPage />
+      </Route>
       <Route exact path="/pastor-portal">
         <PasterPortal />
       </Route>
+
       <Route exact path="/pastor-portal/challenges-encountered">
         <SubmitChallengesEncountered />
       </Route>

@@ -15,7 +15,7 @@ function PasterPortal() {
         <div className="PastorPortal">
            
             {PasterPortalLinks.map(EachLink=>(
-                <Link to={EachLink.Link}>{EachLink.DisplayLink} sss</Link>
+                <Link to={EachLink.Link}>{EachLink.DisplayLink}</Link>
             ))}
         </div>
         </>
