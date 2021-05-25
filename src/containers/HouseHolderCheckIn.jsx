@@ -56,7 +56,7 @@ function HouseHolderCheckIn() {
                </div>
 
 
-               <Link>Add New Member to HouseHold</Link>
+               <Link to="/HouseHolderCheckIn/add-new-member">Add New Member to HouseHold</Link>
                <Link to="/HouseHolderCheckIn/UpdateInformation">To Update Information Click Here</Link>
                <div className="input-wrapper">
                    <input type="checkbox" name="" id="details-check" />

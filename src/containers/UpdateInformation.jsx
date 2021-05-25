@@ -25,7 +25,7 @@ function UpdateInformation() {  const History=useHistory()
          
       }
       console.log(UserData)
-      History.push("/")
+      History.push("/HouseHolderCheckIn")
       }
 
       

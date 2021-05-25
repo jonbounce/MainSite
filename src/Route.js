@@ -13,12 +13,18 @@ import SpecialEvents from "./components/PastorPage/SpecialEvents";
 import RoPastorPortal from "./components/PastorPage/RoPastorPortal";
 import UpdateInformation from "./containers/UpdateInformation";
 import RegionOverseerPage from "./containers/RegionOverseerPage";
+import ChallengesEncounter from "./containers/ChallengesEncounter";
+import HouseHoleMemberAdd from "./containers/HouseHoleMemberAdd";
+import TestimonyInformation from "./containers/TestimonyInformation";
 
 export default function Routes() {
   return (
     <Switch>
       <Route exact path="/">
-        <Home />
+        <Home /> 
+        {/* <HouseHoleMemberAdd /> */}
+ {/* <TestimonyInformation /> */}
+        
       </Route>
 
       <Route exact path="/Login">
@@ -34,6 +40,9 @@ export default function Routes() {
 
       <Route exact path="/HouseHolderCheckIn/UpdateInformation">
         <UpdateInformation />
+      </Route>
+      <Route exact path="/HouseHolderCheckIn/add-new-member">
+        <HouseHoleMemberAdd />
       </Route>
 
       <Route exact path="/Visitor">
