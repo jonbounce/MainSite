@@ -8,6 +8,7 @@ import RegisterAnIndividual from "../components/Register/RegisterAnIndividual";
 import RegisterAHouseHold from "../components/Register/RegisterAHouseHold";
 import RegisterPoster from "../components/Register/RegisterPoster";
 import RegisterRO from "../components/Register/RegisterRO";
+import HouseHoldRegistration from "../components/Register/HouseHoldRegistration";
 
 export default function Register() {
   const [userType, setUserType] = useState("");
@@ -57,7 +58,7 @@ export default function Register() {
             </button>
           </div>
           {userType == "AN INDIVIDUAL" && <RegisterAnIndividual />}
-          {userType == "A HOUSEHOLD" && <RegisterAHouseHold />}
+          {userType == "A HOUSEHOLD" && <HouseHoldRegistration />}
           {userType == "PASTOR" && <RegisterPoster />}
           {userType == "RO" && <RegisterRO />}
         </>
