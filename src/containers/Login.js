@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import "./Login.css";
 
 export default function Login() {
+  const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -14,17 +15,19 @@ export default function Login() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    history.push("/profile");
   }
 
   return (
-    <div className="Login"
-      style={{ display: "flex", alignContent: "center", flexDirection: "column" }}
-    >
-      <Form onSubmit={handleSubmit}
-      >
-        <Form.Group
-          className="mt-5 half-form"
-          size="md" controlId="email">
+    <div
+      className="Login"
+      style={{
+        display: "flex",
+        alignContent: "center",
+        flexDirection: "column",
+      }}>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mt-5 half-form" size="md" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
             autoFocus
@@ -41,7 +44,12 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button className="half-form mt-5" block size="lg" type="submit" disabled={!validateForm()}>
+        <Button
+          className="half-form mt-5"
+          block
+          size="lg"
+          type="submit"
+          disabled={!validateForm()}>
           Login
         </Button>
       </Form>

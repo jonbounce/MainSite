@@ -16,23 +16,27 @@ import RegionOverseerPage from "./containers/RegionOverseerPage";
 import ChallengesEncounter from "./containers/ChallengesEncounter";
 import HouseHoleMemberAdd from "./containers/HouseHoleMemberAdd";
 import TestimonyInformation from "./containers/TestimonyInformation";
+import MemberLogin from "./containers/MemberLogin";
+import CheckInIndividual from "./containers/CheckInIndividual";
 
 export default function Routes() {
   return (
     <Switch>
       <Route exact path="/">
-        <Home /> 
+        <Home />
         {/* <HouseHoleMemberAdd /> */}
- {/* <TestimonyInformation /> */}
-        
+        {/* <TestimonyInformation /> */}
       </Route>
 
       <Route exact path="/Login">
         <Login />
       </Route>
+      <Route exact path="/profile">
+        <MemberLogin />
+      </Route>
 
       <Route exact path="/Checkin">
-        <Checkin />
+        <CheckInIndividual />
       </Route>
       <Route exact path="/HouseHolderCheckIn">
         <HouseHolderCheckIn />

@@ -65,3 +65,16 @@
   color: #fff;
   border-radius: 5px;
 }
+
+.CheckInIndividual label {
+  width: 100% !important;
+  text-align: left;
+}
+.CheckInIndividual .checkbox-wrapper {
+  display: flex;
+  align-items: center;
+}
+.CheckInIndividual .checkbox-wrapper label {
+  margin: 0;
+  margin-left: 1rem;
+}
